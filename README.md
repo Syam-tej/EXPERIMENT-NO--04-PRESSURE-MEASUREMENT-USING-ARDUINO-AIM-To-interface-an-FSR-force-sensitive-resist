@@ -75,7 +75,7 @@ The easiest way to measure a resistive sensor is to connect one end to power and
 
 
 ### PROGRAM 
-*/
+
 ```
  #define fsrpin A0
 #define led1 2
@@ -139,10 +139,11 @@ void loop()
   
   
 }
+```
 
-~~~
-/*
+
 ### OUTPUT:
+
 
 ![ex 4](https://user-images.githubusercontent.com/93427224/174072292-94dde9b9-9b98-49f4-9818-176f85352251.png)
 
@@ -160,4 +161,5 @@ void loop()
 
 
 
-### RESULTS : Thus the interfacing using FSR(force sensitive resistor) is simulated in tinkerCAD.
+### RESULTS : 
+Thus the interfacing using FSR(force sensitive resistor) is simulated in tinkerCAD.
