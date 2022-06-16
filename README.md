@@ -2,8 +2,7 @@
 
 
 ## AIM: 
-To interface an FSR(force sensitive resistor) and scale the output voltage obtained to pressure applied 
- 
+To interface an FSR(force sensitive resistor) and measure the force applied, indicate the change  in applied using LEDs
 ### COMPONENTS REQUIRED:
 1.	FSR  (force sensitive resistor)
 2.	1 KΩ resistor 
@@ -76,30 +75,74 @@ The easiest way to measure a resistive sensor is to connect one end to power and
 
 
 ### PROGRAM 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+```
+ #define fsrpin A0
+#define led1 2
+#define led2 3
+#define led3 4
+#define led4 5
+#define led5 6
+#define led6 7
 
-![image](https://user-images.githubusercontent.com/36288975/163533136-5f8d00f2-8456-4d46-b243-d94d45f83eee.png)
+int fsrreading;
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(led1,OUTPUT);
+  pinMode(led2,OUTPUT);
+  pinMode(led3,OUTPUT);
+  pinMode(led4,OUTPUT);
+  pinMode(led5,OUTPUT);
+  pinMode(led6,OUTPUT);
+}
+void loop()
+{
+  fsrreading=analogRead(fsrpin);
+  Serial.println(fsrreading);
+  if(fsrreading>150)
+  {
+    digitalWrite(led1,HIGH);
+  }
+  else
+    digitalWrite(led1,LOW);
+  if(fsrreading>300)
+  {
+    digitalWrite(led2,HIGH);
+  }
+  else
+    digitalWrite(led2,LOW);
+  if(fsrreading > 450)
+     {
+       digitalWrite(led3,HIGH);
+  }
+  else 
+    digitalWrite(led3,LOW);
+    if(fsrreading >600)
+    {
+      digitalWrite(led4,HIGH);
+    }
+  else
+    digitalWrite(led4,LOW);
+   if(fsrreading >750)
+    {
+      digitalWrite(led5,HIGH);
+    }
+  else
+    digitalWrite(led5,LOW);
+   if(fsrreading >900)
+    {
+      digitalWrite(led6,HIGH);
+    }
+  else
+    digitalWrite(led6,LOW);
+  
+  
+}
 
-### TABLE -02 OUTPUT VOLTAGES AND CHANGE IN RESISTANCES
+~~~
+### OUTPUT:
+
+![ex 4](https://user-images.githubusercontent.com/93427224/174072292-94dde9b9-9b98-49f4-9818-176f85352251.png)
 
 
 
@@ -115,4 +158,4 @@ The easiest way to measure a resistive sensor is to connect one end to power and
 
 
 
-### RESULTS : Arduino uno is interfaced with FSR and output values are indicated on a graph.
+### RESULTS : Thus the interfacing using FSR(force sensitive resistor) is simulated in tinkerCAD.
